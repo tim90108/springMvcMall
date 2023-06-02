@@ -25,7 +25,7 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.member.bean</value>
+				<value>com.memInfo.bean</value>
 			</list>
 		</property>
 
