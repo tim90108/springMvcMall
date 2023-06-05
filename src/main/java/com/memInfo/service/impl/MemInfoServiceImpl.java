@@ -2,6 +2,8 @@ package com.memInfo.service.impl;
 
 import java.util.List;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,9 +34,19 @@ public class MemInfoServiceImpl implements MemInfoService{
 
 	@Override
 	@Transactional
-	public void updateMemInfo(MemInfo memInfo) {
+	public JSONObject updateMemInfo(MemInfo memInfo) throws JSONException {
 		// TODO Auto-generated method stub
-		dao.update(memInfo);
+		JSONObject result = new JSONObject();
+		
+		int count = dao.update(memInfo);
+		
+		if (count > 0 ) {
+			result.put("action", "Y");
+		} else {
+			result.put("action", "N");
+		}
+		
+		return result;
 	}
 
 	

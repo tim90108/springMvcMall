@@ -8,5 +8,5 @@ public interface MemInfoDao {
 	
 	MemInfo findById(Integer id);
 	List<MemInfo> findAll();
-	void update(MemInfo memInfo);
+	int update(MemInfo memInfo);
 }
