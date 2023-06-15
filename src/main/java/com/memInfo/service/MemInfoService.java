@@ -8,7 +8,14 @@ import org.json.JSONObject;
 import com.memInfo.bean.MemInfo;
 
 public interface MemInfoService {
+	
+	JSONObject insertMemInfo(MemInfo memInfo) throws JSONException;
+	
 	List<MemInfo> findMemInfo();
-	MemInfo findMemInfo(Integer id);
+	
+	JSONObject findMemInfoByLogin(MemInfo memInfo)  throws JSONException;
+	
+	MemInfo findMemInfoById(Integer id);
+	
 	JSONObject updateMemInfo(MemInfo memInfo) throws JSONException;
 }

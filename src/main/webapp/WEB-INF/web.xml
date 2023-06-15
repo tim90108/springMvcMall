@@ -16,9 +16,24 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
+  	<filter>
+	  <filter-name>memInfoFilter</filter-name>
+	  <filter-class>com.shop.filter.memInfoFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+	  <filter-name>memInfoFilter</filter-name>
+	  <url-pattern>/shop/testListener</url-pattern>
+	  <dispatcher>REQUEST</dispatcher>
+	  <dispatcher>FORWARD</dispatcher>
+	  <dispatcher>INCLUDE</dispatcher>
+	  <dispatcher>ERROR</dispatcher>
+	  <dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
 </web-app>
